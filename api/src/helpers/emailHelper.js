@@ -34,9 +34,23 @@ const sendAdminUserVerificationMail = (userObj) =>{
         from: '"Fred Foo 👻" ' + process.env.MAIL_USER, // sender address
     to: userObj.email, // list of receivers
     subject: "Account verfication required", // Subject line
-    text: ``, // plain text body
-    html: "<b>Hello world?</b>", // html body
-    }
+    text: `Hi ${userObj.fName} please follow the link to activate your admin account. ${link}`, // plain text body
+    html: `
+    <p>hello ${userObj.fName} </p>
+    <br/>
+    <br/>
+    ${link}
+
+    <p>
+    --------------
+
+    <br/>
+    xyz commerce
+    </p>
+    `, //html body
+
+
+    };
 
     sendMail(emailInfo)
 }
