@@ -39,7 +39,7 @@ const sendAdminUserVerificationMail = (userObj) =>{
     <p>hello ${userObj.fName} </p>
     <br/>
     <br/>
-    ${link}
+    <a href = "${link}"> ${link} </a>
 
     <p>
     --------------
