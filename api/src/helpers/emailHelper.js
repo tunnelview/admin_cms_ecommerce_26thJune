@@ -28,11 +28,13 @@ const sendMail = (emailInfo)=> {
 }
 
 const sendAdminUserVerificationMail = (userObj) =>{
+    const link = '${DOMAIN}/admin-verification?e=${userObj.email} &c=${userObj.verficationCode}';
+
     const emailInfo = {
-        from: '"Fred Foo 👻" <foo@example.com>', // sender address
-    to: "bar@example.com, baz@example.com", // list of receivers
-    subject: "Hello ✔", // Subject line
-    text: "Hello world?", // plain text body
+        from: '"Fred Foo 👻" ' + process.env.MAIL_USER, // sender address
+    to: userObj.email, // list of receivers
+    subject: "Account verfication required", // Subject line
+    text: ``, // plain text body
     html: "<b>Hello world?</b>", // html body
     }
 
